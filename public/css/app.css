@@ -1,0 +1,64 @@
+a {
+    color: #2e2e2e;
+}
+a:hover {
+    color: currentcolor;
+    text-decoration: underline !important;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main {
+    margin-top: 5em;
+}
+
+main .card-title,
+main .card-title + .text-muted {
+    font-size: 2em;
+}
+
+.page_name {
+    font-size: 1.45em;
+}
+.card{
+    padding: 22px 1px;
+}
+
+.card label{
+    font-size: 16px;
+}
+.card-title{
+    font-size: 18px !important;
+    font-weight: 600;
+}
+.card-body{
+    font-size: 22px !important;
+    font-weight: bold;
+}
+.subscription_link{
+    padding: 4px 26px;
+    display: block;
+    text-decoration: unset;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+@media (max-width: 992px) {
+    header {
+        font-size: 0.85em;
+    }
+
+    main {
+        font-size: 0.9em;
+    }
+    main .card-header {
+        font-size: 0.8em;
+    }
+    main .card-title,
+    main .card-title + .text-muted {
+        font-size: 0.9em;
+    }
+}

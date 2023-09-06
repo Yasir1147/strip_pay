@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlansController as plan;
+use App\Http\Controllers\SubscriptionController as sub;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+ return redirect('/login');
 });
+
+Auth::routes();
+Route::get('/home', [plan::class, 'index'])->name('plans');
+Route::get('/plans', [plan::class, 'index'])->name('plans');
+
+Route::middleware("auth")->group(function(){
+
+    Route::get('plans/show/{id}',[plan::class,'show'])->name('plan.show');
+    Route::post('plans/payment',[plan::class,'payment'])->name('plan.payment');
+
+
+    Route::get('user/subscription',[sub::class,'index'])->name('user.sub');
+    Route::get('user/subscription/cancel/{id?}',[sub::class,'sub_cancel'])->name('sub.cancel');
+
+
+});
+
